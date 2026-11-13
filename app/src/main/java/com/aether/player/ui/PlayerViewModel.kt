@@ -111,10 +111,10 @@ class PlayerViewModel(app: Application) : AndroidViewModel(app) {
             return byId[id]
         }
 
-    fun setSortOption(value: SongSort) {
-        sortOption = value
-        ctx.getSharedPreferences("library", Context.MODE_PRIVATE).edit().putString("sort", value.name).apply()
-    }
+    fun updateSortOption(value: SongSort) {
+    sortOption = value
+    ctx.getSharedPreferences("library", Context.MODE_PRIVATE).edit().putString("sort", value.name).apply()
+}
     fun setTheme(value: String) { AppearancePreferences.setTheme(ctx, value); appearanceTick++ }
     fun setGlass(value: Boolean) { AppearancePreferences.setGlass(ctx, value); appearanceTick++ }
     fun setGlassStrength(value: Float) { AppearancePreferences.setGlassStrength(ctx, value); appearanceTick++ }
