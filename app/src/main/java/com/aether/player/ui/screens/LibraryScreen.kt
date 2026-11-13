@@ -47,7 +47,7 @@ fun LibraryScreen(vm: PlayerViewModel) {
                         SongSort.values().forEach { option ->
                             DropdownMenuItem(
                                 text = { Text(option.label + if (vm.sortOption == option) " ✓" else "") },
-                                onClick = { vm.setSortOption(option); sortMenu = false }
+                                onClick = { vm.updateSortOption(option); sortMenu = false }
                             )
                         }
                     }
